@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zindex</title>
+    <style>
+      .wrap {
+        position: relative;
+      }
+      ul {
+      }
+      ul li:nth-child(1) {
+        background: #ddd;
+        position: relative;
+        z-index: 3;
+        border: 2px dashed red;
+      }
+      li > a {
+        position: relative;
+        background: dodgerblue;
+        z-index: 4;
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+      }
+      li > ul {
+        border: 2px dashed green;
+        position: relative;
+        top: -8px;
+        z-index: 3;
+        height: 140px;
+        background: white;
+      }
+      li > ul > li {
+        border: 1px dashed green;
+        padding: 10px;
+        position: absolute;
+      }
+      li > ul > li:nth-child(1) {
+        border: 1px dashed green;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+      }
+      li > ul > li:nth-child(2) {
+        position: absolute;
+        top: 30px;
+        background: gold;
+        z-index: 3;
+      }
+      li > ul > li:nth-child(3) {
+        position: absolute;
+        top: 60px;
+      }
+      li > ul > li:nth-child(4) {
+        position: absolute;
+        top: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li>
+          <a href="#">item-1</a>
+          <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+            <li>item-4</li>
+          </ul>
+        </li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+      </ul>
+    </div>
+  </body>
+</html>
